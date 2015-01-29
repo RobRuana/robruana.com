@@ -1,0 +1,60 @@
+/****************************************************************************
+ * Banner
+ ***************************************************************************/
+.banner .fill {
+    display: none;
+}
+
+.banner .row1 .border,
+.banner .row3 .border {
+    font-size: 1px;
+}
+
+.banner a.www-link {
+    display: inline;
+}
+
+.banner .address1 .cell,
+.banner .address2 .cell,
+.banner .address3 .cell {
+    padding-left: 0.25em;
+}
+
+.banner .row0 .border,
+.banner .row2 .border,
+.banner .row4 .border {
+    padding-top: 0.5em;
+    padding-bottom: 0.625em;
+}
+
+.banner .address0 .border {
+    padding-left: 0.625em;
+}
+
+.banner .address1 .border,
+.banner .address2 .border,
+.banner .address3 .border {
+    padding-left: 0.25em;
+}
+
+.banner .address4 .border {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    width: 1.35em;
+}
+
+.logo {
+    padding: 1px 4px 4px 1px;
+    font-size: 8px;
+}
+
+.logo .box1,
+.logo .box2 {
+    height: 8px;
+    width: 10px;
+}
+
+.logo .box2 {
+    top: 6px;
+    left: 6px;
+}

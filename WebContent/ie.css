@@ -1,0 +1,12 @@
+
+.banner a.email-link img {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='images/email.png', sizingMethod='scale' );
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='images/email.png', sizingMethod='scale' )";
+}
+
+.banner a.twitter-link img {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='images/twitter.png', sizingMethod='scale' );
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='images/twitter.png', sizingMethod='scale' )";
+}
