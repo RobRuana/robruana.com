@@ -5,24 +5,28 @@
  * @returns {Object} Palette look-up table. Defaults to
     {
         normal: {
-            backgroundColor: '#423732',
-            color: '#F3E6C8'
+            backgroundColor: '#000',
+            color: '#FFF'
         },
         highlight: {
-            backgroundColor: '#6B5747',
-            color: '#FFFFFF'
+            backgroundColor: '#000',
+            color: '#FFF'
+        },
+        lowlight: {
+            backgroundColor: '#000',
+            color: '#FFF'
         },
         email: {
-            borderColor: '#CC5947',
-            color: '#CC5947'
+            borderColor: '#FFF',
+            color: '#FFF'
         },
         twitter: {
-            borderColor: '#00ACED',
-            color: '#00ACED'
+            borderColor: '#FFF',
+            color: '#FFF'
         },
         www: {
-            borderColor: '#BADA55',
-            color: '#BADA55'
+            borderColor: '#FFF',
+            color: '#FFF'
         }
     }
  */
@@ -31,24 +35,28 @@ var createPalette = function() {
     var palette = {};
     var defaultPalette = {
         normal: {
-            backgroundColor: '#423732',
-            color: '#F3E6C8'
+            backgroundColor: '#000',
+            color: '#FFF'
         },
         highlight: {
-            backgroundColor: '#6B5747',
-            color: '#FFFFFF'
+            backgroundColor: '#000',
+            color: '#FFF'
+        },
+        lowlight: {
+            backgroundColor: '#000',
+            color: '#FFF'
         },
         email: {
-            borderColor: '#CC5947',
-            color: '#CC5947'
+            borderColor: '#FFF',
+            color: '#FFF'
         },
         twitter: {
-            borderColor: '#00ACED',
-            color: '#00ACED'
+            borderColor: '#FFF',
+            color: '#FFF'
         },
         www: {
-            borderColor: '#BADA55',
-            color: '#BADA55'
+            borderColor: '#FFF',
+            color: '#FFF'
         }
     };
 
@@ -100,7 +108,7 @@ var isEventSupported = function(tag, event) {
  */
 var initBanner = function() {
     var palette = createPalette();
-    var classes = ['www', 'twitter', 'email'];
+    var classes = ['twitter', 'email', 'www'];
 
     var isTouchSupported = isEventSupported('div', 'ontouchstart');
 
@@ -118,7 +126,8 @@ var initBanner = function() {
 
     var unhighlightBanner = function() {
         allTds.removeClass('highlight');
-        allFills.stop().animate({'opacity': '0'}, fadeOutDuration);
+        allFills.stop().animate({'opacity': '1'}, fadeOutDuration);
+        allBorders.stop().animate({'opacity': '1'}, fadeOutDuration);
         allTds.stop().animate({'color': palette.normal.color}, fadeOutDuration);
         if(!(jQuery.browser.msie && jQuery.browser.version < 10)) {
             allCells.stop().animate({'opacity': '1'}, fadeOutDuration);
@@ -152,47 +161,47 @@ var initBanner = function() {
     }
 
     jQuery.each(classes, function(i, cls) {
-        var links = jQuery('.banner a.'+cls+'-link');
-        var otherLinks = jQuery('.banner a.link').not('.banner a.'+cls+'-link');
         var tds = jQuery('.banner td.'+cls);
         var otherTds = jQuery('.banner td').not('.banner td.'+cls);
-        var fills = jQuery('.banner .'+cls+'-fill');
-        var otherFills = jQuery('.banner .fill').not('.banner .'+cls+'-fill');
         var cells = jQuery('.banner .'+cls+' .cell');
         var otherCells = jQuery('.banner .cell').not('.banner .'+cls+' .cell');
+        var fills = jQuery('.banner .'+cls+'-fill');
+        var otherFills = jQuery('.banner .'+cls+' .'+classes[(i + 1) % 3]+'-fill, '+
+                                '.banner .'+cls+' .'+classes[(i + 2) % 3]+'-fill');
         var borders = jQuery('.banner .'+cls+'-border');
-        var otherBorders1 = jQuery('.banner .'+classes[(i + 1) % 3]+'-border');
-        var otherBorders2 = jQuery('.banner .'+classes[(i + 2) % 3]+'-border');
-
-        fills.css('opacity', '0');
-        otherCells.css('opacity', '1');
+        var otherBorders = jQuery('.banner .'+cls+' .'+classes[(i + 1) % 3]+'-border, '+
+                                  '.banner .'+cls+' .'+classes[(i + 2) % 3]+'-border');
 
         var highlightBanner = function() {
             tds.addClass('highlight');
             otherTds.removeClass('highlight');
-            borders.css('z-index', '-1');
-            otherBorders1.css('z-index', '-3');
-            otherBorders2.css('z-index', '-4');
+            borders.css('z-index', '2');
+            otherBorders.css('z-index', '1');
 
             fills.stop().animate({'opacity': '1'}, fadeInDuration);
-            otherFills.stop().animate({'opacity': '0'}, fadeInDuration)
+            otherFills.stop().animate({'opacity': '0'}, fadeInDuration);
+            allBorders.stop().animate({'opacity': '1'}, fadeInDuration);
+            otherBorders.stop().animate({'opacity': '0'}, fadeInDuration);
             tds.stop().animate({'color': palette.highlight.color}, fadeInDuration);
-            otherTds.stop().animate({'color': palette.normal.color}, fadeInDuration);
+            otherTds.stop().animate({'color': palette.lowlight.color}, fadeInDuration);
             if(!(jQuery.browser.msie && jQuery.browser.version < 10)) {
-                cells.stop().animate({'opacity': '1'}, fadeInDuration)
-                otherCells.stop().animate({'opacity': '0.5'}, fadeInDuration);
+                cells.stop().animate({'opacity': '1'}, fadeInDuration);
+                otherCells.stop().animate({'opacity': '0.25'}, fadeInDuration);
             }
             return false;
         };
 
         if(isTouchSupported) {
-            jQuery('.banner a.'+cls+'-link').on('touchstart', function(event) {
+            tds
+                .not('.banner .'+classes[(i + 1) % 3])
+                .not('.banner .'+classes[(i + 2) % 3])
+                .on('touchstart', function(event) {
                 if(event.originalEvent.touches && event.originalEvent.touches.length === 1) {
                     if(jQuery(event.target).parents('.highlight').length === 0) {
                         highlightBanner();
                     } else {
-                        otherLinks.removeAttr('href');
-                        links.each(function() {
+                        jQuery('.banner a.link').not('.banner a.'+cls+'-link').removeAttr('href');
+                        jQuery('.banner a.'+cls+'-link').each(function() {
                             this.setAttribute('href', this.getAttribute('data-href'));
                         });
                     }

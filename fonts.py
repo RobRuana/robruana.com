@@ -1,9 +1,9 @@
 
-min_font = 7
+min_font = 8
 font_step = 1
 
 min_width = 240.0
-max_width = 852.0
+max_width = 816.0
 width_step = 36.0
 
 width = 0

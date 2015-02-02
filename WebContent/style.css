@@ -30,16 +30,16 @@ Tags: one-column, left-sidebar, fixed-width, sticky-post, dark
  * These values are used by banner.js
  ***************************************************************************/
 .palette-normal {
-    background-color: #423732;
+    background-color: #6B5747;
     color: #F3E6C8;
 }
 .palette-highlight {
     background-color: #6B5747;
     color: #FFF;
 }
-.palette-blockquote {
-    border-color: #6B5747;
-    color: #DFC7A8;
+.palette-lowlight {
+    background-color: #6B5747;
+    color: #997551;
 }
 .palette-email {
     color: #CC5947;
@@ -61,7 +61,9 @@ Tags: one-column, left-sidebar, fixed-width, sticky-post, dark
 
 html,
 body {
-    font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L", "Avant Garde", sans-serif;
+    font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic",
+                 CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L",
+                 "Avant Garde", sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -69,7 +71,7 @@ body {
 }
 
 body {
-    background-color: #423732;
+    background-color: #6B5747;
     color: #F3E6C8;
 }
 
@@ -85,7 +87,7 @@ a {
 }
 
 a:hover {
-    background-color: #6B5747;
+    background-color: #997551;
     color: #FFF;
     text-decoration: none;
 }
@@ -94,32 +96,56 @@ a:hover {
  * Header
  ***************************************************************************/
 #header {
-    padding-top: 2em;
+    padding-top: 1.5em;
     width: 100%;
 }
 
 #header .banner {
-    margin: 0 auto 1.5em auto;
+    margin: 0 auto 1em auto;
 }
 
 /****************************************************************************
  * Stuff
  ***************************************************************************/
 .stuff {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-.stuff li {
+.stuff .list1 {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    font-size: 0.75em;
+    font-weight: normal;
+    font-variant: small-caps;
+    letter-spacing: 0.25em;
+    text-align: left;
+}
+
+.stuff .list1 li {
     line-height: 1em;
     list-style: none;
     margin-bottom: 1em;
+}
 
-    font-size: 0.6875em;
-    font-weight: normal;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+.stuff .list1 h1 {
+    margin-bottom: 0.75em;
+    white-space: nowrap;
+    color: #997551;
+}
 
-    text-align: center;
+.stuff .list1 > li {
+    position: relative;
+    left: -50%;
+    margin-bottom: 2em;
+}
+
+.stuff .list1 ul {
+    padding-left: 2em;
+}
+
+.stuff .list2 li {
+    text-transform: none;
 }
 
 /****************************************************************************
@@ -159,81 +185,71 @@ a:hover {
 .banner .cell {
     position: relative;
     height: 100%;
+    z-index: 0;
 }
 
-.banner .email {
-    /* text-shadow: 0 0 10px #423732, 0 0 10px #423732, 0 0 1px #423732; */
+.banner td.highlight {
+    box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.675);
 }
 
-.banner .fill,
+.banner td.highlight .cell {
+    z-index: 1;
+}
+
 .banner .border {
     position: absolute;
-    border-width: 0;
-    border-style: none;
-    height: 100%;
-    width: 100%;
-    top: -1px;
-    left: -1px;
-}
-
-.banner .border {
-    background-color: transparent;
-    border-color: transparent;
-
-    /*
-    opacity: 0;
-    filter:alpha(opacity=0);
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-    zoom: 1;
-    */
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
 }
 
 .banner .fill {
-    z-index: -2;
-    background-color: #6B5747;
-    border-color: #6B5747;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
 
-    opacity: 0;
-    filter:alpha(opacity=0);
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-    zoom: 1;
+    background-color: #6B5747;
+    z-index: -2;
 }
 
 .banner .www-border {
-    z-index: -1;
-}
-
-.banner .twitter-border {
-    z-index: -3;
+    z-index: 2;
 }
 
 .banner .email-border {
-    z-index: -4;
+    z-index: 1;
 }
 
-.banner .row0 td.twitter {
-    padding-right: 1px;
-    padding-bottom: 1px;
+.banner .twitter-border {
+    z-index: 1;
 }
 
-.banner .row4 td.www {
-    padding-right: 1px;
-}
-
-.banner .address0 .cell {
+.banner .row2 .col0 .cell,
+.banner .row3 .col0 .cell {
     padding-left: 0.625em;
 }
 
-.banner .address1 .cell,
-.banner .address2 .cell,
-.banner .address3 .cell {
+.banner .row2 .col1 .cell,
+.banner .row2 .col2 .cell,
+.banner .row2 .col4 .cell,
+.banner .row3 .col1 .cell,
+.banner .row3 .col2 .cell,
+.banner .row3 .col4 .cell {
     padding-left: 0.25em;
 }
 
-.banner .address4 .cell {
+.banner .row2 .col6 .cell,
+.banner .row3 .col6 .cell {
     padding-left: 0.75em;
     padding-right: 0.75em;
     width: 1.35em;
+}
+
+.banner .end {
+    letter-spacing: 0;
 }
 
 .banner a.email-link img {
@@ -250,9 +266,9 @@ a:hover {
     height: 1.0125em;
     width: 1.35em;
     left: 0.75em;
-    margin: -0.50625em auto 0 auto;
+    margin: 0 auto 0 auto;
     position: absolute;
-    top: 50%;
+    top: 0.25em;
 }
 
 .banner a.twitter-link img {
@@ -297,12 +313,6 @@ only screen and (min-resolution:2dppx) {
 .banner a.email-link,
 .banner a.twitter-link,
 .banner a.www-link {
-    /*
-    opacity: 0;
-    filter:alpha(opacity=0);
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
-    zoom: 1;
-    */
 }
 
 .banner .row0 .cell {
@@ -310,18 +320,18 @@ only screen and (min-resolution:2dppx) {
     padding-top: 0.425em;
 }
 
-.banner .row2 .cell {
+.banner .row3 .cell {
     padding-bottom: 0.375em;
-    padding-top: 0.375em;
 }
 
-.banner .row4 .cell {
+.banner .row5 .cell {
     padding-bottom: 0.25em;
     padding-top: 0.25em;
 }
 
 .banner .row1 .cell,
-.banner .row3 .cell {
+.banner .row2 .cell,
+.banner .row4 .cell {
     height: 0.5em;
 }
 
@@ -353,30 +363,44 @@ only screen and (min-resolution:2dppx) {
     border-bottom-right-radius: 0.1667em;
 }
 
-.banner .fill {
-    border: 1px solid #6B5747;
-}
+.banner .email-border.t,
+.banner .email-border.tl,
+.banner .email-border.tr { border-top: 1px solid #CC5947; }
+.banner .email-border.r,
+.banner .email-border.br,
+.banner .email-border.tr { border-right: 1px solid #CC5947; }
+.banner .email-border.b,
+.banner .email-border.bl,
+.banner .email-border.br { border-bottom: 1px solid #CC5947; }
+.banner .email-border.l,
+.banner .email-border.bl,
+.banner .email-border.tl { border-left: 1px solid #CC5947; }
 
-.banner .www-t .www-border { border-top: 1px solid #BADA55; }
-.banner .www-r .www-border { border-right: 1px solid #BADA55; }
-.banner .www-b .www-border { border-bottom: 1px solid #BADA55; }
-.banner .www-l .www-border { border-left: 1px solid #BADA55; }
-.banner .www-r .www-fill { border-right: 0px none transparent; }
-.banner .www-b .www-fill { border-bottom: 0px none transparent; }
+.banner .twitter-border.t,
+.banner .twitter-border.tl,
+.banner .twitter-border.tr { border-top: 1px solid #00ACED; }
+.banner .twitter-border.r,
+.banner .twitter-border.br,
+.banner .twitter-border.tr { border-right: 1px solid #00ACED; }
+.banner .twitter-border.b,
+.banner .twitter-border.bl,
+.banner .twitter-border.br { border-bottom: 1px solid #00ACED; }
+.banner .twitter-border.l,
+.banner .twitter-border.bl,
+.banner .twitter-border.tl { border-left: 1px solid #00ACED; }
 
-.banner .email-t .email-border { border-top: 1px solid #CC5947; }
-.banner .email-r .email-border { border-right: 1px solid #CC5947; }
-.banner .email-b .email-border { border-bottom: 1px solid #CC5947; }
-.banner .email-l .email-border { border-left: 1px solid #CC5947; }
-.banner .email-r .email-fill { border-right: 0px none transparent; }
-.banner .email-b .email-fill { border-bottom: 0px none transparent; }
-
-.banner .twitter-t .twitter-border { border-top: 1px solid #00ACED; }
-.banner .twitter-r .twitter-border { border-right: 1px solid #00ACED; }
-.banner .twitter-b .twitter-border { border-bottom: 1px solid #00ACED; }
-.banner .twitter-l .twitter-border { border-left: 1px solid #00ACED; }
-.banner .twitter-r .twitter-fill { border-right: 0px none transparent; }
-.banner .twitter-b .twitter-fill { border-bottom: 0px none transparent; }
+.banner .www-border.t,
+.banner .www-border.tl,
+.banner .www-border.tr { border-top: 1px solid #BADA55; }
+.banner .www-border.r,
+.banner .www-border.br,
+.banner .www-border.tr { border-right: 1px solid #BADA55; }
+.banner .www-border.b,
+.banner .www-border.bl,
+.banner .www-border.br { border-bottom: 1px solid #BADA55; }
+.banner .www-border.l,
+.banner .www-border.bl,
+.banner .www-border.tl { border-left: 1px solid #BADA55; }
 
 /****************************************************************************
  * Logo
@@ -389,7 +413,7 @@ only screen and (min-resolution:2dppx) {
 }
 
 .logo:hover {
-    background-color: #6B5747;
+    background-color: #997551;
     cursor: pointer;
 }
 
