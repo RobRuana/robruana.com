@@ -212,19 +212,19 @@ a:hover {
     right: 0px;
 
     background-color: #6B5747;
-    z-index: -2;
+    z-index: -3;
 }
 
 .banner .www-border {
-    z-index: 2;
+    z-index: -1;
 }
 
 .banner .email-border {
-    z-index: 1;
+    z-index: -2;
 }
 
 .banner .twitter-border {
-    z-index: 1;
+    z-index: -2;
 }
 
 .banner .row2 .col0 .cell,
@@ -313,6 +313,7 @@ only screen and (min-resolution:2dppx) {
 .banner a.email-link,
 .banner a.twitter-link,
 .banner a.www-link {
+    z-index: 2;
 }
 
 .banner .row0 .cell {

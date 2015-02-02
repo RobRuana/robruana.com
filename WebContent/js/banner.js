@@ -175,8 +175,8 @@ var initBanner = function() {
         var highlightBanner = function() {
             tds.addClass('highlight');
             otherTds.removeClass('highlight');
-            borders.css('z-index', '2');
-            otherBorders.css('z-index', '1');
+            borders.css('z-index', '-1');
+            otherBorders.css('z-index', '-2');
 
             fills.stop().animate({'opacity': '1'}, fadeInDuration);
             otherFills.stop().animate({'opacity': '0'}, fadeInDuration);
