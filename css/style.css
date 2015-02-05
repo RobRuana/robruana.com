@@ -253,7 +253,7 @@ a:hover {
 }
 
 .banner a.email-link img {
-    background: url(images/email.png) no-repeat transparent;
+    background: url(../images/email.png) no-repeat transparent;
     display: block;
     height: 1.0125em;
     width: 1.35em;
@@ -272,7 +272,7 @@ a:hover {
 }
 
 .banner a.twitter-link img {
-    background: url(images/twitter.png) no-repeat transparent;
+    background: url(../images/twitter.png) no-repeat transparent;
     display: block;
     height: 1.0125em;
     width: 1.35em;
@@ -297,11 +297,11 @@ only screen and (min-device-pixel-ratio:2),
 only screen and (min-resolution:192dpi),
 only screen and (min-resolution:2dppx) {
     .banner a.email-link img {
-        background-image: url(images/email_2x.png);
+        background-image: url(../images/email_2x.png);
     }
 
     .banner a.twitter-link img {
-        background-image: url(images/twitter_2x.png);
+        background-image: url(../images/twitter_2x.png);
     }
 }
 
