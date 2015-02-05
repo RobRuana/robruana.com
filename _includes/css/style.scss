@@ -1,0 +1,419 @@
+/*
+Theme Name: Rob Ruana Theme
+Theme URI: http://robruana.com/theme
+Description: Theme for robruana.com.
+Author: Rob Ruana
+Author URI: http://robruana.com
+Version: 0.1
+*/
+
+/****************************************************************************
+ * Palette
+ *
+ * Chocolate Brown: #423732
+ * Coffee Liquer: #6B5747
+ * Brown Sugar: #997551
+ * Cafe Au Lait: #A3816D
+ * Apple Cinnamon: #A9865C
+ * Nougat: #B49F88
+ * Maple Sugar: #C3A590
+ * Honey Peach: #DBC19F
+ * Wheat: #DFC7A8
+ * Vanilla: #F3E6C8
+ * Vanilla Ice: #EFEEE0
+ * Gmail Red: #CC5947
+ * Badass Green: #BADA55
+ * Twitter Blue: #00ACED
+ *
+ * These values are used by banner.js
+ ***************************************************************************/
+
+$normal-bg: #6B5747;
+$normal-color: #F3E6C8;
+$highlight-color: #FFF;
+$lowlight-color: #997551;
+$email-color: #CC5947;
+$twitter-color: #00ACED;
+$www-color: #BADA55;
+$text-color: #F3E6C8;
+$link-color: $text-color;
+$link-hover-bg: $lowlight-color;
+$link-hover-color: $highlight-color;
+$corner-radius: 0.1667em;
+$images-path: "../images/";
+
+.palette-normal {
+    background-color: $normal-bg;
+    color: $normal-color;
+}
+.palette-highlight {
+    background-color: $normal-bg;
+    color: $highlight-color;
+}
+.palette-lowlight {
+    background-color: $normal-bg;
+    color: $lowlight-color;
+}
+.palette-email {
+    color: $email-color;
+}
+.palette-twitter {
+    color: $twitter-color;
+}
+.palette-www {
+    color: $www-color;
+}
+
+/****************************************************************************
+ * SASS Mixins
+ ***************************************************************************/
+
+@mixin tl-radius($radius...) {
+    -moz-border-top-left-radius: $radius;
+    -khtml-border-top-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin tr-radius($radius...) {
+    -moz-border-top-right-radius: $radius;
+    -khtml-border-top-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin bl-radius($radius...) {
+    -moz-border-bottom-left-radius: $radius;
+    -khtml-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin br-radius($radius...) {
+    -moz-border-bottom-right-radius: $radius;
+    -khtml-border-bottom-right-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+/****************************************************************************
+ * Global Styles
+ ***************************************************************************/
+
+html, body {
+    font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic",
+                 CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L",
+                 "Avant Garde", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-color: $normal-bg;
+    color: $text-color;
+}
+
+a, img {
+    border: none;
+}
+
+a {
+    color: $link-color;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $link-hover-bg;
+        color: $link-hover-color;
+        text-decoration: none;
+    }
+}
+
+/****************************************************************************
+ * Header
+ ***************************************************************************/
+#header {
+    padding-top: 1.5em;
+    width: 100%;
+
+    .banner {
+        margin: 0 auto 1em auto;
+    }
+}
+
+/****************************************************************************
+ * Stuff
+ ***************************************************************************/
+.stuff {
+    margin-bottom: 0.5em;
+
+    .list1 {
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        font-size: 0.75em;
+        font-weight: normal;
+        font-variant: small-caps;
+        letter-spacing: 0.25em;
+        text-align: left;
+
+        li {
+            line-height: 1em;
+            list-style: none;
+            margin-bottom: 1em;
+        }
+
+        h1 {
+            margin-bottom: 0.75em;
+            white-space: nowrap;
+            color: $lowlight-color;
+        }
+
+        > li {
+            position: relative;
+            left: -50%;
+            margin-bottom: 2em;
+        }
+    }
+
+    .list2 {
+        padding-left: 2em;
+
+        li {
+            text-transform: none;
+        }
+    }
+}
+
+/****************************************************************************
+ * Footer
+ ***************************************************************************/
+#footer {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+/****************************************************************************
+ * Banner
+ ***************************************************************************/
+.banner {
+    border-collapse: collapse;
+    font-size: 1.5em;
+    letter-spacing: 0.25em;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+
+    a, a:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    .v-spacer {
+        width: 0;
+        height: 1.5em;
+        vertical-align: middle;
+    }
+
+    .cell {
+        position: relative;
+        height: 100%;
+        z-index: 0;
+    }
+
+    td.highlight {
+        box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.675);
+
+        .cell {
+            z-index: 1;
+        }
+    }
+
+    .fill, .border {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .fill {
+        background-color: $normal-bg;
+        z-index: -3;
+    }
+
+    .www-border {
+        z-index: -1;
+    }
+
+    .email-border,
+    .twitter-border {
+        z-index: -2;
+    }
+
+    .row2 .col0 .cell,
+    .row3 .col0 .cell {
+        padding-left: 0.625em;
+    }
+
+    .row2 .col1 .cell,
+    .row2 .col2 .cell,
+    .row2 .col4 .cell,
+    .row3 .col1 .cell,
+    .row3 .col2 .cell,
+    .row3 .col4 .cell {
+        padding-left: 0.25em;
+    }
+
+    .row2 .col6 .cell,
+    .row3 .col6 .cell {
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        width: 1.35em;
+    }
+
+    .end {
+        letter-spacing: 0;
+    }
+
+    a.email-link {
+        display: block;
+        height: 1.0125em;
+        width: 1.35em;
+        left: 0.75em;
+        margin: 0 auto 0 auto;
+        position: absolute;
+        top: 0.25em;
+
+        img {
+            background: url(#{$images-path}email.png) no-repeat transparent;
+            display: block;
+            height: 1.0125em;
+            width: 1.35em;
+            background-size: 100% 100%;
+            zoom: 1;
+        }
+    }
+
+    a.twitter-link {
+        display: block;
+        height: 1.0125em;
+        width: 1.35em;
+        margin: 0 auto;
+
+        img {
+            background: url(#{$images-path}twitter.png) no-repeat transparent;
+            display: block;
+            height: 1.0125em;
+            width: 1.35em;
+            background-size: 100% 100%;
+            zoom: 1;
+        }
+    }
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio:2),
+    only screen and (-khtml-min-device-pixel-ratio:2),
+    only screen and (min--moz-device-pixel-ratio:2),
+    only screen and (-moz-min-device-pixel-ratio:2),
+    only screen and (-o-min-device-pixel-ratio:2/1),
+    only screen and (min-device-pixel-ratio:2),
+    only screen and (min-resolution:192dpi),
+    only screen and (min-resolution:2dppx) {
+        a.email-link img {
+            background-image: url(#{$images-path}email_2x.png);
+        }
+
+        a.twitter-link img {
+            background-image: url(#{$images-path}twitter_2x.png);
+        }
+    }
+
+    a.www-link {
+        color: $www-color;
+        display: inline-block;
+    }
+
+    a.email-link,
+    a.twitter-link,
+    a.www-link {
+        z-index: 2;
+    }
+
+    .row0 .cell {
+        padding-bottom: 0.425em;
+        padding-top: 0.425em;
+    }
+
+    .row3 .cell {
+        padding-bottom: 0.375em;
+    }
+
+    .row5 .cell {
+        padding-bottom: 0.25em;
+        padding-top: 0.25em;
+    }
+
+    .row1 .cell,
+    .row2 .cell,
+    .row4 .cell {
+        height: 0.5em;
+    }
+
+    .tl { @include tl-radius($corner-radius); }
+    .tr { @include tr-radius($corner-radius); }
+    .bl { @include bl-radius($corner-radius); }
+    .br { @include br-radius($corner-radius); }
+
+    @each $type, $color in (email, $email-color),
+                           (twitter, $twitter-color),
+                           (www, $www-color) {
+        .#{$type}-border {
+            &.t, &.tl, &.tr { border-top: 1px solid $color; }
+            &.r, &.br, &.tr { border-right: 1px solid $color; }
+            &.b, &.bl, &.br { border-bottom: 1px solid $color; }
+            &.l, &.bl, &.tl { border-left: 1px solid $color; }
+        }
+    }
+}
+
+/****************************************************************************
+ * Logo
+ ***************************************************************************/
+.logo {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    padding: 0.1em 0.4em 0.4em 0.1em;
+
+    .box1, .box2 {
+        height: 0.5em;
+        width: 0.5em;
+    }
+
+    .box1 {
+        border: 1px solid $twitter-color;
+    }
+
+    .box2 {
+        display: block;
+        position: absolute;
+        border: 1px solid $www-color;
+        top: 0.4em;
+        left: 0.4em;
+    }
+}
+
+.logo:hover {
+    background-color: $link-hover-bg;
+    cursor: pointer;
+
+    .box1, .box2 {
+        border: 1px solid #FFFFFF;
+    }
+}

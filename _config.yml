@@ -1,0 +1,3 @@
+exclude: [LICENSE, Resources, Gemfile, Gemfile.lock]
+sass:
+    style: :compressed

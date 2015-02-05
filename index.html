@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,20 +12,39 @@
 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style type="text/css">
+{% include css/reset.css %}
+    </style>
+    <style type="text/css">
+{% capture fonts_css %}{% include css/fonts.scss %}{% endcapture %}
+{{ fonts_css | scssify }}
+    </style>
+    <style type="text/css">
+{% capture style_css %}{% include css/style.scss %}{% endcapture %}
+{{ style_css | scssify }}
+    </style>
 
     <!--[if gte IE 5.5]>
     <![if lt IE 10]>
-    <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <style type="text/css">
+{% capture style_css %}{% include css/ie.css %}{% endcapture %}
+{{ style_css | scssify }}
+    </style>
     <![endif]>
     <![endif]-->
 
-    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery.animate-colors-min.js"></script>
-    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="js/banner.js"></script>
+    <script type="text/javascript">
+{% include js/jquery-1.11.0.min.js %}
+    </script>
+    <script type="text/javascript">
+{% include js/jquery.animate-colors-min.js %}
+    </script>
+    <script type="text/javascript">
+{% include js/jquery-migrate-1.2.1.min.js %}
+    </script>
+    <script type="text/javascript">
+{% include js/banner.js %}
+    </script>
 </head>
 <body>
     <div id="header">

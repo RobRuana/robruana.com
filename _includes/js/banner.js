@@ -17,15 +17,12 @@
             color: '#FFF'
         },
         email: {
-            borderColor: '#FFF',
             color: '#FFF'
         },
         twitter: {
-            borderColor: '#FFF',
             color: '#FFF'
         },
         www: {
-            borderColor: '#FFF',
             color: '#FFF'
         }
     }
@@ -47,15 +44,12 @@ var createPalette = function() {
             color: '#FFF'
         },
         email: {
-            borderColor: '#FFF',
             color: '#FFF'
         },
         twitter: {
-            borderColor: '#FFF',
             color: '#FFF'
         },
         www: {
-            borderColor: '#FFF',
             color: '#FFF'
         }
     };
