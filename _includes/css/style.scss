@@ -393,6 +393,7 @@ a {
     font-size: 24px;
     zoom: 1;
     padding: 0.1em 0.4em 0.4em 0.1em;
+    overflow: hidden;
 
     .box1, .box2 {
         height: 0.5em;
@@ -409,6 +410,14 @@ a {
         border: 1px solid $www-color;
         top: 0.4em;
         left: 0.4em;
+    }
+
+    .accessibility-text {
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        overflow: hidden;
+        top: -10px;
     }
 }
 
