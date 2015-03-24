@@ -96,6 +96,13 @@ $images-path: "images/";
     border-bottom-right-radius: $radius;
 }
 
+@mixin box-shadow($shadows...) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    -o-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
+
 /****************************************************************************
  * Global Styles
  ***************************************************************************/
@@ -231,7 +238,7 @@ a {
     }
 
     td.highlight {
-        box-shadow: 0 0 1.25em rgba(0, 0, 0, 0.675);
+        @include box-shadow(0 0 1.25em rgba(0, 0, 0, 0.675));
 
         .cell {
             z-index: 1;
