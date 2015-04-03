@@ -31,7 +31,7 @@ Version: 0.1
 $normal-bg: #6B5747;
 $normal-color: #F3E6C8;
 $highlight-color: #FFF;
-$lowlight-color: #997551;
+$lowlight-color: #A9865C;
 $email-color: #CC5947;
 $twitter-color: #00ACED;
 $www-color: #BADA55;
@@ -186,6 +186,7 @@ a {
     }
 
     .list2 {
+        font-size: 16px;
         padding-left: 2em;
 
         li {
