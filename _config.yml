@@ -1,3 +1,8 @@
 exclude: [LICENSE, Resources, Gemfile, Gemfile.lock]
 sass:
+
+    # loading path from site root (defaults to _sass)
+    sass_dir: _includes/css
+
+    # style: :nested (default), :compact, :compressed, :expanded
     style: :compressed

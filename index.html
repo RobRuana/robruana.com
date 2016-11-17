@@ -4,325 +4,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description" content="Rob Ruana" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="keywords" content="Rob Ruana,full stack,software engineer,Linux,iOS,Objective C,Swift,Python,Javascript">
+  <meta name="author" content="Rob Ruana">
 
-    <meta name="google-site-verification" content="T-SUi_fCmo-bs2LJhVxzWCVpA98slNlXWaODJ1A0YwU" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Rob Ruana</title>
+  <meta name="google-site-verification" content="T-SUi_fCmo-bs2LJhVxzWCVpA98slNlXWaODJ1A0YwU" />
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <title>Rob Ruana</title>
 
-    <style type="text/css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <style type="text/css">
 {% include css/reset.css %}
-    </style>
-    <style type="text/css">
+  </style>
+  <style type="text/css">
 {% capture fonts_css %}{% include css/fonts.scss %}{% endcapture %}
 {{ fonts_css | scssify }}
-    </style>
-    <style type="text/css">
+  </style>
+  <style type="text/css">
 {% capture style_css %}{% include css/style.scss %}{% endcapture %}
 {{ style_css | scssify }}
-    </style>
+  </style>
 
-    <!--[if gte IE 5.5]>
-    <![if lt IE 10]>
-    <style type="text/css">
+  <!--[if gte IE 5.5]>
+  <![if lt IE 10]>
+  <style type="text/css">
 {% capture style_css %}{% include css/ie.css %}{% endcapture %}
 {{ style_css | scssify }}
-    </style>
-    <![endif]>
-    <![endif]-->
+  </style>
+  <![endif]>
+  <![endif]-->
 
 </head>
 <body>
-    <div id="header">
-        <table class="banner" cellpadding="0">
-            <tbody>
-                <tr class="row0">
-                    <td class="col0"></td>
-                    <td class="col1 twitter tl tr" colspan="4">
-                        <div class="cell tl tr">
-                            <div class="fill tl tr twitter-fill"></div>
-                            <div class="border tl tr twitter-border"></div>
-                            <a id="twitter-link" class="link twitter-link" href="http://twitter.com/rruana">
-                                <img alt="Twitter" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                            </a>
-                        </div>
-                    </td>
-                    <td class="col5"></td>
-                    <td class="col6"></td>
-                </tr>
-                <tr class="row1">
-                    <td class="col0"></td>
-                    <td class="col1 twitter">
-                        <div class="cell">
-                            <div class="fill l twitter-fill"></div>
-                            <div class="border l twitter-border"></div>
-                        </div>
-                    </td>
-                    <td class="col2 www twitter">
-                        <div class="cell">
-                            <div class="fill twitter-fill"></div>
-                            <div class="fill tl www-fill"></div>
-                            <div class="border twitter-border"></div>
-                            <div class="border tl www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col3 www twitter">
-                        <div class="cell">
-                            <div class="fill twitter-fill"></div>
-                            <div class="fill t www-fill"></div>
-                            <div class="border twitter-border"></div>
-                            <div class="border t www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col4 www twitter">
-                        <div class="cell">
-                            <div class="fill r twitter-fill"></div>
-                            <div class="fill t www-fill"></div>
-                            <div class="border r twitter-border"></div>
-                            <div class="border t www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col5 www tr">
-                        <div class="cell tr">
-                            <div class="fill tr www-fill"></div>
-                            <div class="border tr www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col6"></td>
-                </tr>
-                <tr class="row2">
-                    <td class="col0 email tl">
-                        <div class="cell tl">
-                            <div class="fill tl email-fill"></div>
-                            <div class="border tl email-border"></div>
-                        </div>
-                    </td>
-                    <td class="col1 email twitter">
-                        <div class="cell">
-                            <div class="fill l twitter-fill"></div>
-                            <div class="fill t email-fill"></div>
-                            <div class="border l twitter-border"></div>
-                            <div class="border t email-border"></div>
-                        </div>
-                    </td>
-                    <td class="col2 email twitter www">
-                        <div class="cell">
-                            <div class="fill twitter-fill"></div>
-                            <div class="fill t email-fill"></div>
-                            <div class="fill l www-fill"></div>
-                            <div class="border twitter-border"></div>
-                            <div class="border t email-border"></div>
-                            <div class="border l www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col3 email twitter www">
-                        <div class="cell">
-                            <div class="fill b twitter-fill"></div>
-                            <div class="fill t email-fill"></div>
-                            <div class="fill www-fill"></div>
-                            <div class="border b twitter-border"></div>
-                            <div class="border t email-border"></div>
-                            <div class="border www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col4 email twitter www">
-                        <div class="cell">
-                            <div class="fill r twitter-fill"></div>
-                            <div class="fill t email-fill"></div>
-                            <div class="fill www-fill"></div>
-                            <div class="border r twitter-border"></div>
-                            <div class="border t email-border"></div>
-                            <div class="border www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col5 email www">
-                        <div class="cell">
-                            <div class="fill t email-fill"></div>
-                            <div class="fill r www-fill"></div>
-                            <div class="border t email-border"></div>
-                            <div class="border r www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col6 email tr">
-                        <div class="cell tr">
-                            <div class="fill tr email-fill"></div>
-                            <div class="border tr email-border"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="row3">
-                    <td class="col0 email bl">
-                        <div class="cell bl">
-                            <div class="fill bl email-fill"></div>
-                            <div class="border bl email-border"></div>
-                            rob<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col1 email twitter">
-                        <div class="cell">
-                            <div class="fill l twitter-fill"></div>
-                            <div class="fill b email-fill"></div>
-                            <div class="border l twitter-border"></div>
-                            <div class="border b email-border"></div>
-                            @<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col2 email twitter www">
-                        <div class="cell">
-                            <div class="fill r twitter-fill"></div>
-                            <div class="fill b email-fill"></div>
-                            <div class="fill l www-fill"></div>
-                            <div class="border r twitter-border"></div>
-                            <div class="border b email-border"></div>
-                            <div class="border l www-border"></div>
-                            r<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col3 email www">
-                        <div class="cell">
-                            <div class="fill b email-fill"></div>
-                            <div class="fill www-fill"></div>
-                            <div class="border b email-border"></div>
-                            <div class="border www-border"></div>
-                            o<span class="end">b</span><img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col4 email twitter www">
-                        <div class="cell">
-                            <div class="fill r l twitter-fill"></div>
-                            <div class="fill b email-fill"></div>
-                            <div class="fill www-fill"></div>
-                            <div class="border r l twitter-border"></div>
-                            <div class="border b email-border"></div>
-                            <div class="border www-border"></div>
-                            ruana<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col5 email www">
-                        <div class="cell">
-                            <div class="fill b email-fill"></div>
-                            <div class="fill r www-fill"></div>
-                            <div class="border b email-border"></div>
-                            <div class="border r www-border"></div>
-                            .com<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col6 email br">
-                        <div class="cell br">
-                            <div class="fill br email-fill"></div>
-                            <div class="border br email-border"></div>
-                            &nbsp;<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                            <a id="email-link" class="link email-link" href="mailto:rob@robruana.com">
-                                <img alt="Email" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
+  <div id="header">
+    <table class="banner" cellpadding="0">
+      <tbody>
+        <tr class="row0">
+          <td class="col0"></td>
+          <td class="col1 twitter tl tr" colspan="4">
+            <div class="cell tl tr">
+              <div class="fill tl tr twitter-fill"></div>
+              <div class="border tl tr twitter-border"></div>
+              <a id="twitter-link" class="link twitter-link" href="http://twitter.com/rruana">
+                <img alt="Twitter" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+            </div>
+          </td>
+          <td class="col5"></td>
+          <td class="col6"></td>
+        </tr>
+        <tr class="row1">
+          <td class="col0"></td>
+          <td class="col1 twitter">
+            <div class="cell">
+              <div class="fill l twitter-fill"></div>
+              <div class="border l twitter-border"></div>
+            </div>
+          </td>
+          <td class="col2 www twitter">
+            <div class="cell">
+              <div class="fill twitter-fill"></div>
+              <div class="fill tl www-fill"></div>
+              <div class="border twitter-border"></div>
+              <div class="border tl www-border"></div>
+            </div>
+          </td>
+          <td class="col3 www twitter">
+            <div class="cell">
+              <div class="fill twitter-fill"></div>
+              <div class="fill t www-fill"></div>
+              <div class="border twitter-border"></div>
+              <div class="border t www-border"></div>
+            </div>
+          </td>
+          <td class="col4 www twitter">
+            <div class="cell">
+              <div class="fill r twitter-fill"></div>
+              <div class="fill t www-fill"></div>
+              <div class="border r twitter-border"></div>
+              <div class="border t www-border"></div>
+            </div>
+          </td>
+          <td class="col5 www tr">
+            <div class="cell tr">
+              <div class="fill tr www-fill"></div>
+              <div class="border tr www-border"></div>
+            </div>
+          </td>
+          <td class="col6"></td>
+        </tr>
+        <tr class="row2">
+          <td class="col0 email tl">
+            <div class="cell tl">
+              <div class="fill tl email-fill"></div>
+              <div class="border tl email-border"></div>
+            </div>
+          </td>
+          <td class="col1 email twitter">
+            <div class="cell">
+              <div class="fill l twitter-fill"></div>
+              <div class="fill t email-fill"></div>
+              <div class="border l twitter-border"></div>
+              <div class="border t email-border"></div>
+            </div>
+          </td>
+          <td class="col2 email twitter www">
+            <div class="cell">
+              <div class="fill twitter-fill"></div>
+              <div class="fill t email-fill"></div>
+              <div class="fill l www-fill"></div>
+              <div class="border twitter-border"></div>
+              <div class="border t email-border"></div>
+              <div class="border l www-border"></div>
+            </div>
+          </td>
+          <td class="col3 email twitter www">
+            <div class="cell">
+              <div class="fill b twitter-fill"></div>
+              <div class="fill t email-fill"></div>
+              <div class="fill www-fill"></div>
+              <div class="border b twitter-border"></div>
+              <div class="border t email-border"></div>
+              <div class="border www-border"></div>
+            </div>
+          </td>
+          <td class="col4 email twitter www">
+            <div class="cell">
+              <div class="fill r twitter-fill"></div>
+              <div class="fill t email-fill"></div>
+              <div class="fill www-fill"></div>
+              <div class="border r twitter-border"></div>
+              <div class="border t email-border"></div>
+              <div class="border www-border"></div>
+            </div>
+          </td>
+          <td class="col5 email www">
+            <div class="cell">
+              <div class="fill t email-fill"></div>
+              <div class="fill r www-fill"></div>
+              <div class="border t email-border"></div>
+              <div class="border r www-border"></div>
+            </div>
+          </td>
+          <td class="col6 email tr">
+            <div class="cell tr">
+              <div class="fill tr email-fill"></div>
+              <div class="border tr email-border"></div>
+            </div>
+          </td>
+        </tr>
+        <tr class="row3">
+          <td class="col0 email bl">
+            <div class="cell bl">
+              <div class="fill bl email-fill"></div>
+              <div class="border bl email-border"></div>
+              rob<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col1 email twitter">
+            <div class="cell">
+              <div class="fill l twitter-fill"></div>
+              <div class="fill b email-fill"></div>
+              <div class="border l twitter-border"></div>
+              <div class="border b email-border"></div>
+              @<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col2 email twitter www">
+            <div class="cell">
+              <div class="fill r twitter-fill"></div>
+              <div class="fill b email-fill"></div>
+              <div class="fill l www-fill"></div>
+              <div class="border r twitter-border"></div>
+              <div class="border b email-border"></div>
+              <div class="border l www-border"></div>
+              r<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col3 email www">
+            <div class="cell">
+              <div class="fill b email-fill"></div>
+              <div class="fill www-fill"></div>
+              <div class="border b email-border"></div>
+              <div class="border www-border"></div>
+              o<span class="end">b</span><img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col4 email twitter www">
+            <div class="cell">
+              <div class="fill r l twitter-fill"></div>
+              <div class="fill b email-fill"></div>
+              <div class="fill www-fill"></div>
+              <div class="border r l twitter-border"></div>
+              <div class="border b email-border"></div>
+              <div class="border www-border"></div>
+              ruana<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col5 email www">
+            <div class="cell">
+              <div class="fill b email-fill"></div>
+              <div class="fill r www-fill"></div>
+              <div class="border b email-border"></div>
+              <div class="border r www-border"></div>
+              .com<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col6 email br">
+            <div class="cell br">
+              <div class="fill br email-fill"></div>
+              <div class="border br email-border"></div>
+              &nbsp;<img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              <a id="email-link" class="link email-link" href="mailto:rob@robruana.com">
+                <img alt="Email" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+              </a>
+            </div>
+          </td>
+        </tr>
 
 
-                <tr class="row4">
-                    <td class="col0"></td>
-                    <td class="col1 twitter bl">
-                        <div class="cell bl">
-                            <div class="fill bl twitter-fill"></div>
-                            <div class="border bl twitter-border"></div>
-                        </div>
-                    </td>
-                    <td class="col2 twitter www">
-                        <div class="cell">
-                            <div class="fill br twitter-fill"></div>
-                            <div class="fill l www-fill"></div>
-                            <div class="border br twitter-border"></div>
-                            <div class="border l www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col3 www">
-                        <div class="cell">
-                            <div class="fill www-fill"></div>
-                            <div class="border www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col4 www twitter">
-                        <div class="cell">
-                            <div class="fill bl br twitter-fill"></div>
-                            <div class="fill www-fill"></div>
-                            <div class="border bl br twitter-border"></div>
-                            <div class="border www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col5 www">
-                        <div class="cell">
-                            <div class="fill r www-fill"></div>
-                            <div class="border r www-border"></div>
-                        </div>
-                    </td>
-                    <td class="col6"></td>
-                </tr>
-                <tr class="row5">
-                    <td class="col0"></td>
-                    <td class="col1"></td>
-                    <td class="col2 www bl br" colspan="4">
-                        <div class="cell bl br">
-                            <div class="fill bl br www-fill"></div>
-                            <div class="border bl br www-border"></div>
-                            <a id="www-link" class="link www-link" href="http://robruana.com">
-                                www
-                            </a><img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
-                        </div>
-                    </td>
-                    <td class="col6"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="content">
-        <ul class="list1">
-            <li>
-                <h1>iOS Apps</h1>
-                <ul class="list2">
-                    <li><a id="chaosclock-link" href="http://bracingeffect.com/">Chaos Clock</a></li>
-                    <li>
-                        <a id="debunked-link" href="http://robruana.com/Debunked/">Debunked</a>
-                        – <i><a id="debunked-source-link" href="https://github.com/RobRuana/Debunked">source</a></i>
-                    </li>
-                    <li>
-                        <a id="bracingeffect-link" href="http://bracingeffect.com/Parsnip/">Parsnip</a>
-                        – <i><a id="bracingeffect-source-link" href="https://github.com/BracingEffect/Parsnip">source</a></i>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <h1>Python Projects</h1>
-                <ul class="list2">
-                    <li>
-                        <a id="napoleon-link" href="http://sphinx-doc.org/latest/ext/napoleon.html">Napoleon</a>
-                        - <i><a id="napoleon-source-link" href="https://github.com/sphinx-doc/sphinx/tree/master/sphinx/ext/napoleon">source</a></i>
-                    </li>
-                    <li>
-                        <a id="pockets-link" href="https://pypi.python.org/pypi/pockets">Pockets</a>
-                        – <i><a id="pockets-source-link" href="https://github.com/RobRuana/pockets">source</a></i>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <h1>Source Code</h1>
-                <ul class="list2">
-                    <li><a id="bitbucket-link" href="https://bitbucket.org/RobRuana">BitBucket</a></li>
-                    <li><a id="github-link" href="https://github.com/RobRuana">GitHub</a></li>
-                </ul>
-            </li>
+        <tr class="row4">
+          <td class="col0"></td>
+          <td class="col1 twitter bl">
+            <div class="cell bl">
+              <div class="fill bl twitter-fill"></div>
+              <div class="border bl twitter-border"></div>
+            </div>
+          </td>
+          <td class="col2 twitter www">
+            <div class="cell">
+              <div class="fill br twitter-fill"></div>
+              <div class="fill l www-fill"></div>
+              <div class="border br twitter-border"></div>
+              <div class="border l www-border"></div>
+            </div>
+          </td>
+          <td class="col3 www">
+            <div class="cell">
+              <div class="fill www-fill"></div>
+              <div class="border www-border"></div>
+            </div>
+          </td>
+          <td class="col4 www twitter">
+            <div class="cell">
+              <div class="fill bl br twitter-fill"></div>
+              <div class="fill www-fill"></div>
+              <div class="border bl br twitter-border"></div>
+              <div class="border www-border"></div>
+            </div>
+          </td>
+          <td class="col5 www">
+            <div class="cell">
+              <div class="fill r www-fill"></div>
+              <div class="border r www-border"></div>
+            </div>
+          </td>
+          <td class="col6"></td>
+        </tr>
+        <tr class="row5">
+          <td class="col0"></td>
+          <td class="col1"></td>
+          <td class="col2 www bl br" colspan="4">
+            <div class="cell bl br">
+              <div class="fill bl br www-fill"></div>
+              <div class="border bl br www-border"></div>
+              <a id="www-link" class="link www-link" href="http://robruana.com">
+                www
+              </a><img class="v-spacer" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </div>
+          </td>
+          <td class="col6"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="content">
+    <ul class="list1">
+      <li>
+        <h1>iOS Apps</h1>
+        <ul class="list2">
+          <li><a id="chaosclock-link" href="http://bracingeffect.com/">Chaos Clock</a></li>
+          <li>
+            <a id="debunked-link" href="http://robruana.com/Debunked/">Debunked</a>
+            – <i><a id="debunked-source-link" href="https://github.com/RobRuana/Debunked">source</a></i>
+          </li>
+          <li>
+            <a id="bracingeffect-link" href="http://bracingeffect.com/Parsnip/">Parsnip</a>
+            – <i><a id="bracingeffect-source-link" href="https://github.com/BracingEffect/Parsnip">source</a></i>
+          </li>
         </ul>
-    </div>
-    <div id="footer">
-        <a id="root-link" href="/" title="Home" class="logo">
-            <div class="box1"></div><div class="box2"></div>
-            <span class="accessibility-text">Home</span>
-        </a>
-    </div>
+      </li>
+      <li>
+        <h1>Python Projects</h1>
+        <ul class="list2">
+          <li>
+            <a id="napoleon-link" href="http://sphinx-doc.org/latest/ext/napoleon.html">Napoleon</a>
+            - <i><a id="napoleon-source-link" href="https://github.com/sphinx-doc/sphinx/tree/master/sphinx/ext/napoleon">source</a></i>
+          </li>
+          <li>
+            <a id="pockets-link" href="https://pypi.python.org/pypi/pockets">Pockets</a>
+            – <i><a id="pockets-source-link" href="https://github.com/RobRuana/pockets">source</a></i>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h1>Source Code</h1>
+        <ul class="list2">
+          <li><a id="bitbucket-link" href="https://bitbucket.org/RobRuana">BitBucket</a></li>
+          <li><a id="github-link" href="https://github.com/RobRuana">GitHub</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="footer">
+    <a id="root-link" href="/" title="Home" class="logo">
+      <div class="box1"></div><div class="box2"></div>
+      <span class="accessibility-text">Home</span>
+    </a>
+  </div>
 
 <script type="text/javascript">
 {% include js/jquery-1.11.0.min.js %}
