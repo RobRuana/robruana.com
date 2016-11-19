@@ -1,129 +1,40 @@
-/*
-Theme Name: Rob Ruana Theme
-Theme URI: http://robruana.com/theme
-Description: Theme for robruana.com.
-Author: Rob Ruana
-Author URI: http://robruana.com
-Version: 0.1
-*/
 
-/****************************************************************************
- * Palette
- *
- * Chocolate Brown: #423732
- * Coffee Liquer: #6B5747
- * Brown Sugar: #997551
- * Cafe Au Lait: #A3816D
- * Apple Cinnamon: #A9865C
- * Nougat: #B49F88
- * Maple Sugar: #C3A590
- * Honey Peach: #DBC19F
- * Wheat: #DFC7A8
- * Vanilla: #F3E6C8
- * Vanilla Ice: #EFEEE0
- * Gmail Red: #CC5947
- * Badass Green: #BADA55
- * Twitter Blue: #00ACED
- *
- * These values are used by banner.js
- ***************************************************************************/
+@import "variables";
+@import "normalize";
+@import "mixins";
 
-$normal-bg: #6B5747;
-$normal-color: #F3E6C8;
-$highlight-color: #FFF;
-$lowlight-color: #A9865C;
-$email-color: #CC5947;
-$twitter-color: #00ACED;
-$www-color: #BADA55;
-$text-color: #F3E6C8;
-$link-color: $text-color;
-$link-hover-bg: $lowlight-color;
-$link-hover-color: $highlight-color;
-$corner-radius: 0.1667em;
-$images-path: "images/";
 
-.palette-normal {
-    background-color: $normal-bg;
-    color: $normal-color;
-}
-.palette-highlight {
-    background-color: $normal-bg;
-    color: $highlight-color;
-}
-.palette-lowlight {
-    background-color: $normal-bg;
-    color: $lowlight-color;
-}
-.palette-email {
-    color: $email-color;
-}
-.palette-twitter {
-    color: $twitter-color;
-}
-.palette-www {
-    color: $www-color;
-}
+//-------------------------------------------------------------
+// Global styles
+//-------------------------------------------------------------
 
-/****************************************************************************
- * SASS Mixins
- ***************************************************************************/
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
 
-@mixin tl-radius($radius...) {
-    -moz-border-top-left-radius: $radius;
-    -khtml-border-top-left-radius: $radius;
-    -webkit-border-top-left-radius: $radius;
-    border-top-left-radius: $radius;
-}
+html,
+body {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: 300;
 
-@mixin tr-radius($radius...) {
-    -moz-border-top-right-radius: $radius;
-    -khtml-border-top-right-radius: $radius;
-    -webkit-border-top-right-radius: $radius;
-    border-top-right-radius: $radius;
-}
-
-@mixin bl-radius($radius...) {
-    -moz-border-bottom-left-radius: $radius;
-    -khtml-border-bottom-left-radius: $radius;
-    -webkit-border-bottom-left-radius: $radius;
-    border-bottom-left-radius: $radius;
-}
-
-@mixin br-radius($radius...) {
-    -moz-border-bottom-right-radius: $radius;
-    -khtml-border-bottom-right-radius: $radius;
-    -webkit-border-bottom-right-radius: $radius;
-    border-bottom-right-radius: $radius;
-}
-
-@mixin box-shadow($shadows...) {
-    -webkit-box-shadow: $shadows;
-    -moz-box-shadow: $shadows;
-    -o-box-shadow: $shadows;
-    box-shadow: $shadows;
-}
-
-/****************************************************************************
- * Global Styles
- ***************************************************************************/
-
-html, body {
-    font-family: Futura, Futura-Medium, "Futura Medium", "Century Gothic",
-                 CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L",
-                 "Avant Garde", sans-serif;
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     width: 100%;
 }
 
 body {
+    position: relative;
+
     background-color: $normal-bg;
     color: $text-color;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
-a, img {
-    border: none;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
 }
 
 a {
@@ -131,313 +42,327 @@ a {
     cursor: pointer;
     text-decoration: none;
 
-    &:hover {
+    &:hover, &:focus {
         background-color: $link-hover-bg;
         color: $link-hover-color;
         text-decoration: none;
     }
 }
 
-/****************************************************************************
- * Header
- ***************************************************************************/
-#header {
-    padding-top: 1.5em;
-    width: 100%;
+.background-image {
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
 
-    .banner {
-        margin: 0 auto 1em auto;
+.section {
+    &:after {
+        clear: both;
+        content: " ";
+        display: block;
     }
 }
 
-/****************************************************************************
- * Content
- ***************************************************************************/
-.content {
-    margin-bottom: 0.5em;
+.hr {
+    display: block;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    white-space: nowrap;
 
-    .list1 {
+    .hr-left, .hr-right, .hr-center {
         display: inline-block;
-        position: relative;
-        left: 50%;
-        font-size: 18px;
-        font-weight: normal;
+    }
+
+    .hr-left, .hr-right {
+        background-color: mix($normal-bg, $normal-color, 50%);
+
+        height: 1px;
+        width: 11em;
+
+        vertical-align: middle;
+    }
+
+    .hr-left {
+        @include gradient-horizontal($normal-bg, $normal-color);
+    }
+
+    .hr-right {
+        @include gradient-horizontal($normal-color, $normal-bg);
+    }
+
+    .hr-center {
+        // font-family: cursive;
+        padding: 0 0.5em;
+    }
+}
+
+$screen-xs-min: 360px !default;
+$screen-sm-min: 480px !default;
+$screen-md-min: 680px !default;
+$screen-lg-min: 800px !default;
+
+.container {
+    margin: 0 auto;
+
+    width: 100%;
+    max-width: $screen-lg-min;
+    @media (min-width: $screen-lg-min) { width: $screen-lg-min; }
+
+    .col {
+        display: block;
+        float: left;
+
+        text-align: center;
+
+        padding: 0 10px;
+
+        width: 100%;
+
+        @media (min-width: $screen-sm-min) {
+            &.col-sm-33 { width: 33.3%; }
+            &.col-sm-50 { width: 49.9%; }
+        }
+
+        @media (min-width: $screen-md-min) {
+            &.col-md-33 { width: 33.3%; }
+            &.col-md-50 { width: 49.9%; }
+        }
+
+        &:after {
+            clear: both;
+            content: " ";
+            display: block;
+        }
+
+        .inner {
+            display: inline-block;
+            text-align: left;
+        }
+    }
+}
+
+
+//-------------------------------------------------------------
+// Header
+//-------------------------------------------------------------
+
+#header {
+    padding: 72px 0 54px 0;
+
+    h1 {
+        font-size: 4em;
         font-variant: small-caps;
-        letter-spacing: 0.25em;
-        text-align: left;
+        text-align: center;
+        white-space: nowrap;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    font-size: 0.625em;
+    @media (min-width: $screen-xs-min) { font-size: 0.75em; }
+    @media (min-width: $screen-sm-min) { font-size: 1em; }
+}
+
+
+//-------------------------------------------------------------
+// Content
+//-------------------------------------------------------------
+
+#content {
+
+    h2 {
+        color: $lowlight-color;
+        font-size: 1.25em;
+        text-align: center;
+        white-space: nowrap;
+
+        margin: 0 0 1em 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 0 45px;
 
         li {
-            line-height: 1em;
+            display: block;
             list-style: none;
-            margin-bottom: 1em;
-        }
 
-        h1 {
-            margin-bottom: 0.75em;
-            white-space: nowrap;
-            color: $lowlight-color;
-        }
+            padding: 0;
+            margin: 0 0 0.75em;
 
-        > li {
-            position: relative;
-            left: -50%;
-            margin-bottom: 2em;
+            a {
+                display: inline-block;
+                white-space: nowrap;
+
+                font-size: 1em;
+
+                @include text-shadow(1px 1px 0 $normal-bg);
+
+                @include transition(all 0.2s ease 0s);
+
+                span {
+                    padding: 0 0.5em;
+                }
+            }
         }
     }
 
-    .list2 {
-        font-size: 16px;
-        padding-left: 2em;
+    #contact {
+        a {
+            @include border-radius(20px);
 
-        li {
-            text-transform: none;
+            .logo {
+                height: 40px;
+                width: 40px;
+                @include border-radius(20px);
+            }
 
-            a {
-                padding-left: 0.2em;
+            .v-spacer {
+                display: inline-block;
+                vertical-align: middle;
+                height: 40px;
+                width: 1px;
+            }
+        }
+
+        #email-link { color: $red-color; }
+        #twitter-link { color: $orange-color; }
+        #runkeeper-link { color: $yellow-color; }
+        #bitbucket-link { color: $green-color; }
+        #github-link { color: $blue-color; }
+        #resume-link, #resume-pdf-link { color: $violet-color; }
+
+        #resume-link {
+            @include border-radius(20px 0 0 20px);
+            span {
+                padding: 0 0.25em 0 0.5em;
+            }
+        }
+
+        #resume-pdf-link {
+            @include border-radius(0 20px 20px 0);
+            span {
+                padding: 0 0.5em 0 0.25em;
+            }
+        }
+    }
+
+    #ios {
+        a {
+            @include border-radius(13px);
+
+            .logo {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+    #python {
+        a {
+            @include border-radius(20px);
+
+            .logo {
+                height: 40px;
+                width: 40px;
             }
         }
     }
 }
 
-/****************************************************************************
- * Footer
- ***************************************************************************/
+
+//-------------------------------------------------------------
+// Footer
+//-------------------------------------------------------------
+
 #footer {
     clear: both;
-    width: 100%;
     text-align: center;
-    padding-bottom: 0.5em;
-}
 
-/****************************************************************************
- * Banner
- ***************************************************************************/
-.banner {
-    border-collapse: collapse;
-    font-size: 1.5em;
-    letter-spacing: 0.25em;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    padding: 9px 0 72px 0;
 
-    a, a:hover {
-        text-decoration: none;
-        background-color: transparent;
-    }
-
-    .v-spacer {
-        width: 0;
-        height: 1.5em;
-        vertical-align: middle;
-    }
-
-    .cell {
-        position: relative;
-        height: 100%;
-        z-index: 0;
-    }
-
-    td.highlight {
-        @include box-shadow(0 0 1.25em rgba(0, 0, 0, 0.675));
-
-        .cell {
-            z-index: 1;
-        }
-    }
-
-    .fill, .border {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        right: 0px;
-    }
-
-    .fill {
-        background-color: $normal-bg;
-        z-index: -3;
-    }
-
-    .www-border {
-        z-index: -1;
-    }
-
-    .email-border,
-    .twitter-border {
-        z-index: -2;
-    }
-
-    .row2 .col0 .cell,
-    .row3 .col0 .cell {
-        padding-left: 0.625em;
-    }
-
-    .row2 .col1 .cell,
-    .row2 .col2 .cell,
-    .row2 .col4 .cell,
-    .row3 .col1 .cell,
-    .row3 .col2 .cell,
-    .row3 .col4 .cell {
-        padding-left: 0.25em;
-    }
-
-    .row2 .col6 .cell,
-    .row3 .col6 .cell {
-        padding-left: 0.75em;
-        padding-right: 0.75em;
-        width: 2.85em;
-    }
-
-    .end {
-        letter-spacing: 0;
-    }
-
-    $icon-height: 1.0125em; /*90px;*/
-    $icon-width: 1.35em; /*120px;*/
-
-    a.email-link, a.twitter-link {
-        display: block;
-        margin: 0 auto 0 auto;
-        height: $icon-height;
-        width: $icon-width;
-
-        img {
-            display: block;
-            background-repeat: no-repeat;
-            background-color: transparent;
-            background-position: 0 0;
-            background-size: 100% 100%;
-            height: $icon-height;
-            width: $icon-width;
-            zoom: 1;
-        }
-    }
-
-    a.email-link {
-        position: absolute;
-        left: 0.75em;
-        top: 0.25em;
-
-        img {
-            background-image: url(#{$images-path}email.png);
-        }
-    }
-
-    a.twitter-link {
-        img {
-            background-image: url(#{$images-path}twitter.png);
-        }
-    }
-
-    @media
-    only screen and (-webkit-min-device-pixel-ratio:2),
-    only screen and (-khtml-min-device-pixel-ratio:2),
-    only screen and (min--moz-device-pixel-ratio:2),
-    only screen and (-moz-min-device-pixel-ratio:2),
-    only screen and (-o-min-device-pixel-ratio:2/1),
-    only screen and (min-device-pixel-ratio:2),
-    only screen and (min-resolution:192dpi),
-    only screen and (min-resolution:2dppx) {
-        a.email-link img {
-            background-image: url(#{$images-path}email_2x.png);
-        }
-
-        a.twitter-link img {
-            background-image: url(#{$images-path}twitter_2x.png);
-        }
-    }
-
-    a.www-link {
-        color: $www-color;
-        display: inline-block;
-    }
-
-    a.email-link,
-    a.twitter-link,
-    a.www-link {
-        z-index: 2;
-    }
-
-    .row0 .cell {
-        padding-bottom: 0.425em;
-        padding-top: 0.425em;
-    }
-
-    .row3 .cell {
-        padding-bottom: 0.375em;
-    }
-
-    .row5 .cell {
-        padding-bottom: 0.25em;
-        padding-top: 0.25em;
-    }
-
-    .row1 .cell,
-    .row2 .cell,
-    .row4 .cell {
-        height: 0.5em;
-    }
-
-    .tl { @include tl-radius($corner-radius); }
-    .tr { @include tr-radius($corner-radius); }
-    .bl { @include bl-radius($corner-radius); }
-    .br { @include br-radius($corner-radius); }
-
-    @each $type, $color in (email, $email-color),
-                           (twitter, $twitter-color),
-                           (www, $www-color) {
-        .#{$type}-border {
-            &.t, &.tl, &.tr { border-top: 1px solid $color; }
-            &.r, &.br, &.tr { border-right: 1px solid $color; }
-            &.b, &.bl, &.br { border-bottom: 1px solid $color; }
-            &.l, &.bl, &.tl { border-left: 1px solid $color; }
-        }
+    #copyright {
+        color: $lowlight-color;
+        font-size: 12px;
+        padding: 2em 0 0;
     }
 }
 
-/****************************************************************************
- * Logo
- ***************************************************************************/
-.logo {
+
+//-------------------------------------------------------------
+// Logo
+//-------------------------------------------------------------
+
+.robruana-logo {
     position: relative;
     display: inline-block;
-    font-size: 24px;
     zoom: 1;
     padding: 0.1em 0.4em 0.4em 0.1em;
     overflow: hidden;
 
     .box1, .box2 {
-        height: 0.5em;
-        width: 0.5em;
+        display: block;
+        padding: 0.25em;
     }
 
     .box1 {
-        border: 1px solid $twitter-color;
+        border: 1px solid $twitter-blue;
     }
 
     .box2 {
-        display: block;
+        border: 1px solid $badass-green;
+
         position: absolute;
-        border: 1px solid $www-color;
         top: 0.4em;
         left: 0.4em;
     }
 
-    .accessibility-text {
-        height: 1px;
-        width: 1px;
-        position: absolute;
-        overflow: hidden;
-        top: -10px;
+    &:hover, &:focus {
+        .box1, .box2 {
+            border: 1px solid $link-hover-color;
+        }
     }
 }
 
-.logo:hover {
-    background-color: $link-hover-bg;
-    cursor: pointer;
 
-    .box1, .box2 {
-        border: 1px solid #FFFFFF;
-    }
+//-------------------------------------------------------------
+// Retina images
+//-------------------------------------------------------------
+
+#email-link .logo { background-image: url(#{$images-path}email-logo.png); }
+#twitter-link .logo { background-image: url(#{$images-path}twitter-logo.png); }
+#runkeeper-link .logo { background-image: url(#{$images-path}runkeeper-logo.png); }
+#bitbucket-link .logo { background-image: url(#{$images-path}bitbucket-logo.png); }
+#github-link .logo { background-image: url(#{$images-path}github-logo.png); }
+#resume-link .logo { background-image: url(#{$images-path}resume-logo.png); }
+#jurbly-link .logo { background-image: url(#{$images-path}jurbly-logo.png); }
+#chaosclock-link .logo { background-image: url(#{$images-path}chaosclock-logo.png); }
+#parsnip-link .logo { background-image: url(#{$images-path}parsnip-logo.png); }
+#debunked-link .logo { background-image: url(#{$images-path}debunked-logo.png); }
+#python .logo { background-image: url(#{$images-path}python-logo.png); }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (-khtml-min-device-pixel-ratio:2),
+only screen and (min--moz-device-pixel-ratio:2),
+only screen and (-moz-min-device-pixel-ratio:2),
+only screen and (-o-min-device-pixel-ratio:2/1),
+only screen and (min-device-pixel-ratio:2),
+only screen and (min-resolution:192dpi),
+only screen and (min-resolution:2dppx) {
+    #email-link .logo { background-image: url(#{$images-path}email-logo_2x.png); }
+    #twitter-link .logo { background-image: url(#{$images-path}twitter-logo_2x.png); }
+    #runkeeper-link .logo { background-image: url(#{$images-path}runkeeper-logo_2x.png); }
+    #bitbucket-link .logo { background-image: url(#{$images-path}bitbucket-logo_2x.png); }
+    #github-link .logo { background-image: url(#{$images-path}github-logo_2x.png); }
+    #resume-link .logo { background-image: url(#{$images-path}resume-logo_2x.png); }
+    #jurbly-link .logo { background-image: url(#{$images-path}jurbly-logo_2x.png); }
+    #chaosclock-link .logo { background-image: url(#{$images-path}chaosclock-logo_2x.png); }
+    #parsnip-link .logo { background-image: url(#{$images-path}parsnip-logo_2x.png); }
+    #debunked-link .logo { background-image: url(#{$images-path}debunked-logo_2x.png); }
+    #python .logo { background-image: url(#{$images-path}python-logo_2x.png); }
 }

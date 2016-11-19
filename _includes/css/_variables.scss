@@ -1,0 +1,67 @@
+
+$images_path: "images/";
+
+
+//-------------------------------------------------------------
+// Palette
+//
+// Chocolate Brown: #423732
+// Coffee Liquer: #6B5747
+// Brown Sugar: #997551
+// Cafe Au Lait: #A3816D
+// Apple Cinnamon: #A9865C
+// Nougat: #B49F88
+// Maple Sugar: #C3A590
+// Honey Peach: #DBC19F
+// Wheat: #DFC7A8
+// Vanilla: #F3E6C8
+// Vanilla Ice: #EFEEE0
+// Gmail Red: #CC5947
+// Badass Green: #BADA55
+// Twitter Blue: #00ACED
+//-------------------------------------------------------------
+
+$gmail-red: #CC5947;
+$badass-green: #BADA55;
+$twitter-blue: #00ACED;
+
+$normal-bg: #6B5747;
+$normal-color: #F3E6C8;
+$lowlight-color: lighten(#A9865C, 2.5%);
+$highlight-color: #FFF;
+$text-color: #F3E6C8;
+$link-color: $text-color;
+$link-hover-bg: #8C6D53;
+$link-hover-color: $link-color;
+
+$red-color: #ff7068;
+$orange-color: #ffa860;
+$yellow-color: #ff8;
+$green-color: #BADA55;
+$blue-color: #99f;
+$violet-color: #e8e;
+
+
+//-------------------------------------------------------------
+// Responsive Breakpoints
+//-------------------------------------------------------------
+
+
+//-------------------------------------------------------------
+// Typography
+//-------------------------------------------------------------
+
+$icon-font-path: "fonts/" !default;
+
+$font-family-cursive: 'Apple Chancery', 'Lucida Calligraphy', cursive, serif !default;
+
+$font-family-futura:
+    Futura, Futura-Medium, "Futura Medium", "Century Gothic",
+    CenturyGothic, "Apple Gothic", AppleGothic, "URW Gothic L",
+    "Avant Garde", sans-serif !default;
+
+$font-family-sans-serif:
+    system, -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$font-size-base: 18px !default;
