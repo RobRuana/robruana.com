@@ -27,7 +27,7 @@
 <header>
   <h1>Rob Ruana</h1>
   <ul>
-    <li>Richmond, CA</li>
+    <li>Baltimore, MD</li>
     <li>540-247-1603</li>
     <li><a href="mailto:rob@robruana.com">rob@robruana.com</a></li>
     <li><a href="http://robruana.com">http://robruana.com</a></li>
@@ -44,8 +44,8 @@
     <p><b>Accomplished</b> in building for scalability, eliminating
     performance bottlenecks, and developing for security.</p>
 
-    <p><b>Gets things done</b>, quickly turning ideas into requirements
-    into finished products.</p>
+    <p><b>Leader</b> able to organize teams that turn ideas into
+    requirements into finished products.</p>
   </section>
 
   <section id="expertise">
@@ -58,12 +58,12 @@
 
       <div>
         <dt>Server Side</dt>
-        <dd>Python 2/3, Django, Pylons, SQLAlchemy, WSGI, REST, JSON-RPC, PHP, Java, C#</dd>
+        <dd>Python 2/3, CherryPy, Django, Flask, SQLAlchemy, WSGI, REST, JSON-RPC, PHP, Java, C#</dd>
       </div>
 
       <div>
         <dt>Tools</dt>
-        <dd>PostgreSQL, MySQL, Redis, Puppet, Jenkins, Travis, Tox, Git, Mercurial, NGINX, Linux</dd>
+        <dd>PostgreSQL, MySQL, Redis, SaltStack, Puppet, Jenkins, Travis, Tox, Git, NGINX, HAProxy, Linux</dd>
       </div>
     </dl>
   </section>
@@ -73,9 +73,41 @@
 
     <article>
       <header>
+        <h1><a href="https://www.magfest.org">MAGFest, Inc. &ndash; Director of Software Engineering</a></h1>
+        <div class="date">Mar 2017 &ndash; Present</div>
+        <div class="geo">Baltimore, MD</div>
+      </header>
+      <ul>
+        <li>
+          Oversaw volunteer and contract software developers to effectively direct the development of an
+          <a href="https://github.com/magfest/ubersystem">open source event registration system</a>.
+        </li>
+        <li>
+          Mentored junior developers into accomplished senior developers via code review, design discussions,
+          and personal support.
+        </li>
+        <li>
+          Overhauled legacy codebase that was locked into a monolithic single-process, single-server deployment;
+          created a distributed multi-server system capable of handling tens of thousands of badge sales during
+          the opening moments of MAGFest preregistration launch.
+        </li>
+        <li>
+          Redesigned <a href="https://github.com/magfest/infrastructure">IT and deployment infrastructure</a>,
+          moving from a series of manually created servers and ad-hoc scripts to full configuration management,
+          following the principle of "Infrastructure as Code".
+        </li>
+        <li>
+          Created repeatable, automated, distributed cloud deployments, drastically reducing administration
+          overhead and configuration errors.
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <header>
         <h1><a href="http://bracingeffect.com">Bracing Effect, LLC &ndash; Owner</a></h1>
         <div class="date">Jun 2013 &ndash; Present</div>
-        <div class="geo">Richmond, CA</div>
+        <div class="geo">Vienna, VA</div>
       </header>
       <ul>
         <li>
@@ -132,7 +164,7 @@
       </header>
       <ul>
         <li>
-          Led teams of up to four direct reports through complete software lifecycle &ndash;
+          Led teams of up to five direct reports through complete software lifecycle &ndash;
           from inception to finished product, using iterative design and prototyping, with automated testing,
           packaging, and deployment.
         </li>
@@ -142,7 +174,7 @@
           <div class="technologies">Pylons, SQLAlchemy, Ext JS, Tornado Web Server, Apache Thrift, PostgreSQL, MySQL</div>
           <div class="technologies">CherryPY, SQLAlchemy, jQuery, HTML5, CSS3, OpenLDAP, PostgreSQL, Redis</div>
         </li>
-        <li>
+        <li class="print-hide">
           Developed an HTTPS based proxy/VPN tunnel powered by a JavaScript
           Firefox Extension communicating through a custom designed proxy server written in Java.
           <div class="technologies">XUL (Firefox Extension), JavaScript, HTTP CONNECT Tunneling</div>
@@ -193,7 +225,7 @@
           Consumed and correlated real-time vessel positions with historic vessel tracking data using a sharded SQL Server database.
           <div class="technologies">Google Earth, Visual Basic.NET, ASP.NET, WSDL/SOAP, IIS, SQL Server</div>
         </li>
-        <li>
+        <li class="print-hide">
           Prototyped new security models, including single sign-on via Active Directory and
           intranet data access through corporate firewall.
           <div class="technologies">C#, ASP.NET, WSDL/SOAP, IIS</div>
@@ -210,7 +242,7 @@
       </header>
       <ul>
 -->
-        <li>
+        <li class="print-hide">
           Developed Perl scripts to parse vessel position reports, calculate course deviation, and
           predict tracking via dead reckoning. Eliminated significant bugs in mission critical C++ code for vessel tracking program.
           <div class="technologies">Perl, Borland C++, Oracle</div>
@@ -221,14 +253,17 @@
 
 
   <section id="opensource">
-    <h1>Open Source Projects</h1>
+    <h1>
+      Open Source Projects
+      <small><a href="https://github.com/RobRuana">github.com/RobRuana</a></small>
+    </h1>
 
     <article>
       <h1><a href="http://sphinx-doc.org/latest/ext/napoleon.html">Napoleon &ndash; Author</a></h1>
       <p>Sphinx extension to support NumPy and Google style Python docstrings.</p>
     </article>
 
-    <article>
+    <article class="print-hide">
       <h1><a href="http://robruana.com/Debunked/">Debunked &ndash; Author</a></h1>
       <p>Native iOS interface for the snopes.com urban legend and rumor debunking website.</p>
     </article>
@@ -243,7 +278,7 @@
       <p>A collection of helpful Python utilities.</p>
     </article>
 
-    <article>
+    <article class="print-hide">
       <h1><a href="https://github.com/magfest/sideboard">Sideboard &ndash; Contributor</a></h1>
       <p>Python web app server with support for exposing web services and running background tasks.</p>
     </article>

@@ -52,6 +52,7 @@ body {
   body { background-color: #fff; padding: 0; }
   a { color: #000; }
   .container { max-width: none; padding: 0; }
+  .print-hide { display: none; }
 }
 
 @media screen and (max-width: $md-breakpoint) {
@@ -118,7 +119,7 @@ body > .container > header {
 
 section ~ section {
   margin-top: 1.5em;
-  @media print { margin-top: 1em; }
+  @media print { margin-top: 0.9em; }
 }
 
 section {
@@ -144,7 +145,7 @@ section {
 
   li, dl div, p {
     margin-bottom: 0.5em;
-    @media print { margin-bottom: 0.375em; }
+    @media print { margin-bottom: 0.25em; }
   }
 }
 
@@ -202,11 +203,21 @@ article {
 #career {
   article ~ article {
     margin-top: 1.5em;
-    @media print { margin-top: 1em; }
+    @media print { margin-top: 0.7em; }
   }
 }
 
 #opensource, #education {
+  h1 {
+    small {
+      float: right;
+      text-transform: none;
+      a {
+        color: $header-color;
+      }
+    }
+  }
+
   article {
       margin-bottom: 0.5em;
       @media print { margin-bottom: 0.25em; }
